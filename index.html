@@ -11,37 +11,42 @@
       Tara, originellement nommée Antarctica puis Seamaster, est une goélette française destinée à la fois à l'exploration et à la défense de l'environnement. Dans le cadre de l'Année polaire internationale, en 2007-2008, ce voilier est utilisé en Arctique par l'expédition Tara Arctic dans le but de faire des relevés permettant de mieux comprendre les changements climatiques qui s'opèrent en Arctique. En 2009, dans le cadre de l'expédition Tara Oceans, Tara parcourt les mers et les océans dans une circumnavigation de trois ans afin d'étudier le piégeage des molécules de gaz carbonique (CO2) par les micro-organismes marins comme le plancton. En avril 2016, une nouvelle expédition est montée Tara Pacific dont l'objectif est de comprendre le corail, menacé par des facteurs humains et climatiques1.
     </p>
   </div>
-  <div>
-  <div class="color green"></div>
-  <div class="color red" ></div>
-  <div class="color blue" ></div>
+  <div id="colors">
+    <div class="color green"></div>
+    <div class="color red" ></div>
+    <div class="color blue" ></div>
+  </div>
   <script type="text/javascript">
-    // Utilisation de l'id pour ciblé l'élément pui change la couleur
-    // document.getElementById("green").addEventListener('click', function()
-    // {
-    //   document.getElementById('text').style.color ="green";
-    // });
+    // Variante universelle permettant de faire n'importe quelle changement de couleur
+    var colorDivs = document.querySelectorAll('.colors');
+    document.addEventListener('click', function(event){
+      var currentChild = event.target;
+      var classN = currentChild.className;
+      var color = classN.split(' ');
+      document.querySelector('p').style.color = color[color.length-1];
+    })
+
     // Utilisation du getElementsByClassName pour ciblé la classe voulue
     // getElementsByClassName crée une liste de noeud contenant tout les éléments color (ici 3, allant de 0 à 2)
     // Ici on cible le premier élément color (correspondant au vert)
-    document.getElementsByClassName("color")[0].addEventListener('click', function()
-    {
-      // Puis on change l'attribut color du text
-      document.getElementById('text').style.color ="green";
-    });
-    // Ici on cible le deuxième élément color (correspondant au rouge)
-    document.getElementsByClassName("color")[1].addEventListener('click', function()
-    {
-      // Puis on change l'attribut color du text
-      document.getElementById('text').style.color ="red";
-    });
-    // Ici on cible le troisième élément color (correspondant au blue)
-    document.getElementsByClassName("color")[2].addEventListener('click', function()
-    {
-      // Puis on change l'attribut color du text
-      document.getElementById('text').style.color ="blue";
-    });
+    // document.getElementsByClassName("color")[0].addEventListener('click', function()
+    // {
+    //   // Puis on change l'attribut color du text
+    //   document.getElementById('text').style.color ="green";
+    // });
+    // // Ici on cible le deuxième élément color (correspondant au rouge)
+    // document.getElementsByClassName("color")[1].addEventListener('click', function()
+    // {
+    //   // Puis on change l'attribut color du text
+    //   document.getElementById('text').style.color ="red";
+    // });
+    // // Ici on cible le troisième élément color (correspondant au blue)
+    // document.getElementsByClassName("color")[2].addEventListener('click', function()
+    // {
+    //   // Puis on change l'attribut color du text
+    //   document.getElementById('text').style.color ="blue";
+    // });
   </script>
-</div>
+
 </body>
 </html>
