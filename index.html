@@ -21,8 +21,11 @@
     var colorDivs = document.querySelectorAll('.colors');
     document.addEventListener('click', function(event){
       var currentChild = event.target;
+      // On récup le nom de la classe ('color nomCouleur')
       var classN = currentChild.className;
+      // On split le nom pour séparer color et NomCouleur
       var color = classN.split(' ');
+      // On modifie la couleur avec le nom de classe de la couleur
       document.querySelector('p').style.color = color[color.length-1];
     })
 
